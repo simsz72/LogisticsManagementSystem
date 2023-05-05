@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="272.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxControllers.ForumPage">
+   <children>
+      <Label layoutX="93.0" layoutY="22.0" text="Forum">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="forumDescriptionArea" layoutX="36.0" layoutY="134.0" prefHeight="85.0" prefWidth="200.0" promptText="description" />
+      <Button fx:id="actionButton" layoutX="179.0" layoutY="350.0" mnemonicParsing="false" onAction="#validateForum" text="Done" />
+      <Button layoutX="41.0" layoutY="350.0" mnemonicParsing="false" onAction="#cancelForum" text="Cancel" />
+      <TextField fx:id="forumTitleField" layoutX="61.0" layoutY="86.0" promptText="title" />
+   </children>
+</AnchorPane>

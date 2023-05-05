@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane fx:id="allTabs" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxControllers.MainPage">
+  <tabs>
+    <Tab fx:id="userTab" text="Users">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="255.0">
+               <children>
+                  <ListView fx:id="driverList" layoutX="14.0" layoutY="14.0" prefHeight="311.0" prefWidth="219.0" />
+                  <Button fx:id="userDeleteButton" layoutX="512.0" layoutY="74.0" mnemonicParsing="false" onAction="#deleteUser" text="Delete" />
+                  <Button fx:id="userUpdateButton" layoutX="511.0" layoutY="111.0" mnemonicParsing="false" onAction="#updateUser" text="Update" />
+                  <ListView fx:id="managerList" layoutX="261.0" layoutY="14.0" prefHeight="311.0" prefWidth="219.0" />
+                  <Button layoutX="96.0" layoutY="332.0" mnemonicParsing="false" onAction="#refreshPage" text="Refresh" />
+                  <Button fx:id="myProfileButton" layoutX="503.0" layoutY="332.0" mnemonicParsing="false" onAction="#updateUser" text="My profile" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab fx:id="cargoTab" text="Cargos">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ListView fx:id="cargoList" layoutX="14.0" layoutY="14.0" prefHeight="311.0" prefWidth="219.0" />
+                  <Button layoutX="478.0" layoutY="47.0" mnemonicParsing="false" onAction="#showCargoDetails" text="View details" />
+                  <Button layoutX="493.0" layoutY="88.0" mnemonicParsing="false" onAction="#deleteCargo" text="Delete" />
+                  <Button layoutX="491.0" layoutY="127.0" mnemonicParsing="false" onAction="#updateCargo" prefWidth="55.0" text="Update" />
+                  <Button layoutX="493.0" layoutY="170.0" mnemonicParsing="false" onAction="#createCargo" text="Create" />
+                  <Button layoutX="88.0" layoutY="332.0" mnemonicParsing="false" onAction="#refreshPage" text="Refresh" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab fx:id="carTab" text="Cars">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ListView fx:id="carList" layoutX="14.0" layoutY="14.0" prefHeight="311.0" prefWidth="219.0" />
+                  <Button layoutX="501.0" layoutY="65.0" mnemonicParsing="false" onAction="#deleteCar" text="Delete" />
+                  <Button layoutX="499.0" layoutY="103.0" mnemonicParsing="false" onAction="#updateCar" text="Update" />
+                  <Button layoutX="501.0" layoutY="145.0" mnemonicParsing="false" onAction="#createCar" text="Create" />
+                  <Button layoutX="83.0" layoutY="332.0" mnemonicParsing="false" onAction="#refreshPage" text="Refresh" />
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab fx:id="commentTab" text="Comments">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ListView fx:id="commentList" layoutX="14.0" layoutY="14.0" prefHeight="311.0" prefWidth="219.0" />
+                  <Button layoutX="508.0" layoutY="63.0" mnemonicParsing="false" onAction="#deleteComment" text="Delete" />
+                  <Button layoutX="506.0" layoutY="132.0" mnemonicParsing="false" onAction="#updateComment" text="Update" />
+                  <Button layoutX="508.0" layoutY="97.0" mnemonicParsing="false" onAction="#createComment" text="Create" />
+                  <Button layoutX="83.0" layoutY="332.0" mnemonicParsing="false" onAction="#refreshPage" text="Refresh" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Destinations">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ListView fx:id="destinationList" layoutX="14.0" layoutY="13.0" onMouseClicked="#displayChart" prefHeight="311.0" prefWidth="219.0" />
+                  <Button fx:id="deleteDestinationButton" layoutX="269.0" layoutY="208.0" mnemonicParsing="false" onAction="#deleteDestination" text="Delete" />
+                  <Button fx:id="updateDestinationButton" layoutX="267.0" layoutY="282.0" mnemonicParsing="false" onAction="#updateDestination" text="Update" />
+                  <Button fx:id="createDestinationButton" layoutX="269.0" layoutY="245.0" mnemonicParsing="false" onAction="#createDestination" text="Create" />
+                  <Button layoutX="254.0" layoutY="169.0" mnemonicParsing="false" onAction="#showDestinationDetails" text="View details" />
+                  <BarChart fx:id="chart" layoutX="245.0" layoutY="19.0" prefHeight="150.0" prefWidth="331.0">
+                    <xAxis>
+                      <CategoryAxis maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+                  <ListView layoutX="355.0" layoutY="158.0" prefHeight="200.0" prefWidth="200.0" />
+                  <Button layoutX="96.0" layoutY="332.0" mnemonicParsing="false" onAction="#refreshPage" text="Refresh" />
+                  <Button fx:id="actionButton" layoutX="391.0" layoutY="320.0" mnemonicParsing="false" text="Filter" />
+                  <Button layoutX="477.0" layoutY="320.0" mnemonicParsing="false" onAction="#refreshPage" text="Reset" />
+                  <ComboBox fx:id="driverComboBox" layoutX="380.0" layoutY="182.0" prefWidth="150.0" promptText="Driver" />
+                  <ComboBox fx:id="carComboBox" layoutX="380.0" layoutY="221.0" prefWidth="150.0" promptText="Car" />
+                  <ComboBox fx:id="statusComboBox" layoutX="380.0" layoutY="258.0" prefWidth="150.0" promptText="Status" />
+                  <ListView fx:id="userDestinationList" layoutX="26.0" layoutY="14.0" onMouseClicked="#displayChart" prefHeight="311.0" prefWidth="219.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Forums">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ListView fx:id="forumList" layoutX="14.0" layoutY="14.0" prefHeight="311.0" prefWidth="219.0" />
+                  <Button fx:id="deleteForumButton" layoutX="487.0" layoutY="79.0" mnemonicParsing="false" onAction="#deleteForum" text="Delete" />
+                  <Button fx:id="updateForumButton" layoutX="485.0" layoutY="170.0" mnemonicParsing="false" onAction="#updateForum" text="Update" />
+                  <Button layoutX="487.0" layoutY="123.0" mnemonicParsing="false" onAction="#createForum" text="Create" />
+                  <Button layoutX="472.0" layoutY="34.0" mnemonicParsing="false" onAction="#showForumDetails" text="View details" />
+                  <Button layoutX="96.0" layoutY="332.0" mnemonicParsing="false" onAction="#refreshPage" text="Refresh" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Checkpoints">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ListView fx:id="checkpointList" layoutX="14.0" layoutY="14.0" prefHeight="311.0" prefWidth="219.0" />
+                  <Button layoutX="477.0" layoutY="78.0" mnemonicParsing="false" onAction="#deleteCheckpoint" text="Delete" />
+                  <Button layoutX="475.0" layoutY="161.0" mnemonicParsing="false" onAction="#updateCheckpoint" text="Update" />
+                  <Button layoutX="477.0" layoutY="122.0" mnemonicParsing="false" onAction="#createCheckpoint" text="Create" />
+                  <Button layoutX="96.0" layoutY="332.0" mnemonicParsing="false" onAction="#refreshPage" text="Refresh" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>

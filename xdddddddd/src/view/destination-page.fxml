@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="468.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxControllers.DestinationPage">
+   <children>
+      <TextField fx:id="destinationAddressField" layoutX="41.0" layoutY="55.0" promptText="destinationAddress" />
+      <Label layoutX="170.0" layoutY="14.0" text="Destination">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Button layoutX="42.0" layoutY="429.0" mnemonicParsing="false" onAction="#cancelDestination" prefHeight="25.0" prefWidth="54.0" text="Cancel" />
+      <Button fx:id="actionButton" layoutX="372.0" layoutY="429.0" mnemonicParsing="false" onAction="#validateDestination" text="Done" />
+      <ComboBox fx:id="carBox" layoutX="41.0" layoutY="90.0" prefWidth="150.0" promptText="Car" />
+      <ComboBox fx:id="checkpointBox" layoutX="254.0" layoutY="264.0" prefWidth="150.0" promptText="Checkpoints" />
+      <ComboBox fx:id="driverBox" layoutX="41.0" layoutY="126.0" prefWidth="150.0" promptText="Driver" />
+      <ComboBox fx:id="managerBox" layoutX="250.0" layoutY="74.0" prefWidth="150.0" promptText="Manager" />
+      <ComboBox fx:id="cargoBox" layoutX="45.0" layoutY="264.0" prefWidth="150.0" promptText="Cargo" />
+      <ComboBox fx:id="statusBox" layoutX="41.0" layoutY="163.0" prefWidth="150.0" promptText="Status" />
+      <ListView fx:id="destinationManagerList" layoutX="225.0" layoutY="141.0" prefHeight="66.0" prefWidth="200.0" />
+      <Button fx:id="addManagerButton" layoutX="270.0" layoutY="109.0" mnemonicParsing="false" onAction="#addManager" text="Add" />
+      <Button fx:id="deleteManagerButton" layoutX="334.0" layoutY="109.0" mnemonicParsing="false" onAction="#deleteManager" text="Delete" />
+      <Button fx:id="addCheckpointButton" layoutX="281.0" layoutY="303.0" mnemonicParsing="false" onAction="#addCheckpoint" text="Add" />
+      <Button fx:id="deleteCheckpointButton" layoutX="345.0" layoutY="303.0" mnemonicParsing="false" onAction="#deleteCheckpoint" text="Delete" />
+      <ListView fx:id="destinationCheckpointList" layoutX="229.0" layoutY="340.0" prefHeight="66.0" prefWidth="200.0" />
+      <Button fx:id="addCargoButton" layoutX="72.0" layoutY="303.0" mnemonicParsing="false" onAction="#addCargo" text="Add" />
+      <Button fx:id="deleteCargoButton" layoutX="136.0" layoutY="303.0" mnemonicParsing="false" onAction="#deleteCargo" text="Delete" />
+      <ListView fx:id="destinationCargoList" layoutX="20.0" layoutY="340.0" prefHeight="66.0" prefWidth="200.0" />
+      <DatePicker fx:id="departureDate" layoutX="29.0" layoutY="195.0" promptText="Departure date" />
+      <DatePicker fx:id="arrivalDate" layoutX="29.0" layoutY="228.0" promptText="Arrival date" />
+      <Text layoutX="14.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="D." />
+      <Text layoutX="15.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A." />
+   </children>
+</AnchorPane>
